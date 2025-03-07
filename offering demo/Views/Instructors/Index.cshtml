@@ -1,0 +1,52 @@
+﻿@model IEnumerable<offering_demo.Models.Instructor>
+
+@{
+    int counter = 1;
+    ViewData["Title"] = "Instructors";
+}
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<strong>
+    <a asp-action="Create" class="btn btn-success m-1"> ADD Instructor</a>
+</strong>
+
+@if (Model == null || !Model.Any())
+{
+    <p class="text-danger">No instructors found in the database.</p>
+}
+else
+{
+    <table class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Instructor Name</th>
+                <th>Gender</th>
+                <th>Academic Rank</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var crs in Model)
+            {
+                <tr>
+                    <td>@counter</td>
+                    <td>@crs.Name</td>
+                    <td>@crs.Gender</td>
+                    <td>@crs.ARank</td>
+                    <td>@(crs.Department?.DepartmentName ?? "No Department")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@crs.InstructorId" class="btn btn-primary m-1"><i class="bi bi-pencil"></i></a>
+                        <a asp-action="Delete" asp-route-id="@crs.InstructorId" class="btn btn-danger m-1"><i class="bi bi-trash"></i></a>
+                    </td>
+                </tr>
+                counter++;
+             
+            }
+        </tbody>
+    </table>
+}

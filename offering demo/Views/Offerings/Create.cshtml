@@ -1,0 +1,39 @@
+﻿@model offering_demo.Models.Offering
+
+@{
+    ViewData["Title"] = "Create Offering";
+}
+
+<h3>Create Offering</h3>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        <label class="control-label">Department</label>
+        <select asp-for="Course.DepartmentID" class="form-control" asp-items="ViewBag.DepartmentList">
+            <option value="">~Select Department~</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Course Name</label>
+        <select asp-for="CourseId" class="form-control" asp-items="ViewBag.CoursesList">
+            <option value="">~Select Course~</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Instructor Name</label>
+        <select asp-for="InstructorId" class="form-control" asp-items="ViewBag.InstructorList">
+            <option value="">~Select Instructor~</option>
+        </select>
+    </div>
+
+
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>

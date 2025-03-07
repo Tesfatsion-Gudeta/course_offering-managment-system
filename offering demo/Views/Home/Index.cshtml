@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    int counter = 1;
+}
+
+<div class="hero-section text-center">
+    <div class="container">
+        <h1 class="display-4">Welcome to Our Course Management System</h1>
+        <p class="lead">Effortlessly manage courses, instructors, departments, and semesters.</p>
+       
+    </div>
+</div>
+
+@* <div class="container text-center mt-5"> *@
+@*     <h3>Our Students</h3> *@
+
+@*     @if (ViewBag.listSize > 0) *@
+@*     { *@
+@*         <table class="table table-bordered table-striped"> *@
+@*             <thead class="table-dark"> *@
+@*                 <tr> *@
+@*                     <th>#</th> *@
+@*                     <th>Student Name</th> *@
+@*                     <th>Gender</th> *@
+@*                 </tr> *@
+@*             </thead> *@
+@*             <tbody> *@
+@*                 @for (int i = 0; i < ViewBag.listSize; i++) *@
+@*                 { *@
+@*                     <tr> *@
+@*                         <td>@counter</td> *@
+@*                         <td>@ViewBag.students[i].Name</td> *@
+@*                         <td>@ViewBag.students[i].Gender</td> *@
+@*                     </tr> *@
+@*                     counter++; *@
+@*                 } *@
+@*             </tbody> *@
+@*         </table> *@
+@*     } *@
+@*     else *@
+@*     { *@
+@*         <p>No students available.</p> *@
+@*     } *@
+@* </div> *@
+
+

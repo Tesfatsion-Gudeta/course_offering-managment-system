@@ -1,0 +1,29 @@
+﻿@model offering_demo.Models.Department
+
+@{
+    ViewData["Title"] = "Edit Department";
+}
+
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="DepartmentID" />
+    <h3>Edit Department</h3>
+
+    <div class="form-group">
+        <label class="control-label">Department Name</label>
+        <input asp-for="DepartmentName" class="form-control" required />
+        <span asp-validation-for="DepartmentName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Department Acronym</label>
+        <input asp-for="DepartmentAcronym" class="form-control" required />
+        <span asp-validation-for="DepartmentAcronym" class="text-danger"></span>
+    </div>
+
+    <br />
+    <div class="form-group">
+        <input type="submit" value="Save Changes" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
